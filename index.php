@@ -1,32 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My webite</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>My website</h1>
-    </header>
-    <main>
+<?php get_header() ?>
+
         <section>
-            <h2>Welcome to my portfolio</h2>
-            <p>This is a website where I will showcase my work!</p>
+            <?php while(have_posts()) : the_post() ?>
+                
+                <h2><?php the_title() ?></h2>
+                <p><?php the_content() ?></p>
 
 
-            <h3>Follow me on social media:</h3>
-            <p><a href="https://www.facebook.com/Thoha/" target="_blank">Facebook</a></p>
-            <p><a href="https://www.linkedin.com/in/thomasboulund/" target="_blank">LinkedIn</a></p>
+                <h3>Follow me on social media:</h3>
+                <p><a href="<?php the_field("facebook_link") ?>" target="_blank">Facebook</a></p>
+                <p><a href="<?php the_field("linkedin_link") ?>" target="_blank">LinkedIn</a></p>
+            <?php endwhile; ?>
         </section>
         <section>
-            <img src="images/profile.jpg" alt="Me">
+            <img src="<?php the_field("profile_picture") ?>" alt="Me">
         </section>
-    </main>
-    <footer>
-        © Copyright 2021
-    </footer>
-</body>
-</html>
+
+<?php get_footer() ?>
