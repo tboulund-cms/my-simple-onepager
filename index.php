@@ -8,8 +8,8 @@
 
 
                 <h3>Follow me on social media:</h3>
-                <p><a href="<?php the_field("facebook_link") ?>" target="_blank">Facebook</a></p>
-                <p><a href="<?php the_field("linkedin_link") ?>" target="_blank">LinkedIn</a></p>
+                <a href="<?php the_field("facebook_link") ?>" target="_blank"><img src="<?php echo get_template_directory_uri() ?>/images/facebook.png" alt=""></a>
+                <a href="<?php the_field("linkedin_link") ?>" target="_blank"><img src="<?php echo get_template_directory_uri() ?>/images/linkedin.png" alt=""></a>
             <?php endwhile; ?>
         </section>
         <section>
